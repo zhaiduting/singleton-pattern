@@ -1,6 +1,6 @@
 {
     "name": "zhaiduting/singleton-pattern",
-    "description": "Inheritable singleton pattern",
+    "description": "Inheritable singleton pattern in PHP",
     "type": "library",
     "license": "MIT",
     "authors": [

@@ -18,9 +18,6 @@ class C extends Singleton
         $this->values[$key] = $value;
     }
 
-    static function getInstance()
-    {
-    }
 }
 
 class D extends C
