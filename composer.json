@@ -1,0 +1,22 @@
+{
+    "name": "zhaiduting/singleton-pattern",
+    "description": "Inheritable singleton pattern",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "zhaiduting",
+            "email": "zhaiduting@163.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.4.3"
+	},
+    "autoload": {
+        "psr-4": {
+            "Zhaiduting\\SingletonPattern\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
