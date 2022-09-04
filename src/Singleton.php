@@ -12,7 +12,7 @@ class Singleton
 
     final static function instance()
     {
-        $k = get_class(new static);
+        $k = static::class;
         if (empty(self::$instance[$k]))
             self::$instance[$k] = new static();
         return self::$instance[$k];
