@@ -2,6 +2,7 @@
 
 namespace Test;
 include '../src/Singleton.php';
+
 use Zhaiduting\SingletonPattern\Singleton;
 
 class C extends Singleton
@@ -22,12 +23,19 @@ class C extends Singleton
 
 class D extends C
 {
-    public static array $instance = [__CLASS__ => 2];
+    static array $instance = [__CLASS__ => 'Will not overwrite Singleton::$instance'];
+    static array $initialize_only_once;
+
+    static function init()
+    {
+        print_r(self::$initialize_only_once);
+    }
 }
 
 $c = C::instance();
 $c->set('foo', 'ccc');
 
+D::$initialize_only_once = ['Parameters', 'passed', 'for', 'initialization'];
 $d = D::instance();
 $d->set('foo', 'ddd');
 

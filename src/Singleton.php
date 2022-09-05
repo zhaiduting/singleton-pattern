@@ -6,8 +6,13 @@ class Singleton
 {
     private static array $instance = [];
 
+    static function init()
+    {
+    }
+
     final private function __construct()
     {
+        static::init();
     }
 
     final static function instance()
