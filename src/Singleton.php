@@ -10,16 +10,16 @@ class Singleton
     {
     }
 
-    final private function __construct()
+    final private function __construct(...$args)
     {
-        static::init();
+        static::init(...$args);
     }
 
-    final static function instance()
+    final static function instance(...$args)
     {
         $k = static::class;
         if (empty(self::$instance[$k]))
-            self::$instance[$k] = new static();
+            self::$instance[$k] = new static(...$args);
         return self::$instance[$k];
     }
 }
