@@ -2,6 +2,7 @@
 
 namespace MyTest;
 include '../src/Singleton.php';
+include './print_rn.php';
 
 use Zhaiduting\SingletonPattern\Singleton;
 
@@ -23,24 +24,29 @@ class C extends Singleton
 
 class D extends C
 {
-    static array $instance = [__CLASS__ => 'Will not overwrite Singleton::$instance'];
-
-    static function init($arr = 'To solve the problem of declaration')
+    /**
+     * To solve the declaration problem in IDE, each parameter should be set with a default value
+     */
+    static function init($arr = '')
     {
-        print_r(func_get_args());
+        print_rn(func_get_args());
     }
 }
 
+print_rn("-------------\$c---------------");
 $c = C::instance();
 $c->set('foo', 'cccccccccc');
-print_r($c->get('foo') . "\n");
+print_rn($c->get('foo'));
 
-echo "------------------------------\n";
-$d1 = D::instance('Parameters', 'need', 'only', 'be', 'passed', 'once');
+print_rn("-------------\$d1--------------");
+$d1 = D::instance('instance 1');
 $d1->set('foo', 'dddddddddd');
-print_r($d1->get('foo') . "\n");
-print_r($d1::$instance);
+print_rn($d1->get('foo'));
 
-echo "------------------------------\n";
-$d2 = D::instance();
-echo($d1 === $d2 ? '$d1 === $d2' : '$d !== $d2');
+print_rn("-------------\$d2--------------");
+$d2 = D::instance('instance 2');
+print_rn($d1 === $d2 ? '$d1 === $d2' : '$d1 !== $d2');
+$d3 = D::instance('instance 1');
+print_rn($d1 === $d3 ? '$d1 === $d3' : '$d1 !== $d3');
+print_rn("-----------Singleton-----------");
+print_rn(Singleton::instance());
