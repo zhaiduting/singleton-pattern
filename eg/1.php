@@ -2,24 +2,11 @@
 
 namespace MyTest;
 include '../vendor/autoload.php';
-include './print_rn.php';
 
-use Zhaiduting\SingletonPattern\Singleton;
+use Zhaiduting\SingletonPattern\Registry;
 
-class C extends Singleton
+class C extends Registry
 {
-    private $values = [];
-
-    function get($key)
-    {
-        return $this->values[$key] ?? null;
-    }
-
-    function set($key, $value)
-    {
-        $this->values[$key] = $value;
-    }
-
 }
 
 class D extends C
@@ -48,5 +35,5 @@ $d2 = D::instance('instance 2');
 print_rn($d1 === $d2 ? '$d1 === $d2' : '$d1 !== $d2');
 $d3 = D::instance('instance 1');
 print_rn($d1 === $d3 ? '$d1 === $d3' : '$d1 !== $d3');
-print_rn("-----------Singleton-----------");
-print_rn(Singleton::instance());
+print_rn("-----------Registry-----------");
+print_rn(Registry::instance());

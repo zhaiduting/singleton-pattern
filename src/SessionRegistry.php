@@ -4,7 +4,7 @@ namespace Zhaiduting\SingletonPattern;
 
 class SessionRegistry extends Registry
 {
-    protected array $value;
+    protected array $values;
 
     function init(string $session_key = '')
     {
@@ -12,6 +12,6 @@ class SessionRegistry extends Registry
         session_start();
         if (empty($_SESSION[$session_key]))
             $_SESSION[$session_key] = [];
-        $this->value =& $_SESSION[$session_key];
+        $this->values =& $_SESSION[$session_key];
     }
 }

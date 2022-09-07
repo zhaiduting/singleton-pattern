@@ -4,15 +4,15 @@ namespace Zhaiduting\SingletonPattern;
 
 class Registry extends Singleton
 {
-    protected array $value = [];
+    protected array $values = [];
 
     function get($key)
     {
-        return $this->value[$key] ?? null;
+        return $this->values[$key] ?? null;
     }
 
     function set($key, $val)
     {
-        $this->value[$key] = $val;
+        $this->values[$key] = $val;
     }
 }

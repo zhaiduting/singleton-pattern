@@ -1,7 +1,6 @@
 <?php
 
-include '../vendor/autoload.php';
-include './print_rn.php';
+include '../../vendor/autoload.php';
 
 use Zhaiduting\SingletonPattern\SessionRegistry;
 

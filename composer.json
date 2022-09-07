@@ -15,7 +15,10 @@
     "autoload": {
         "psr-4": {
             "Zhaiduting\\SingletonPattern\\": "src/"
-        }
+        },
+        "files": [
+            "tools/print_rn.php"
+        ]
     },
     "minimum-stability": "dev",
     "prefer-stable": true
