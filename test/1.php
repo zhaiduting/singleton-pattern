@@ -1,7 +1,7 @@
 <?php
 
 namespace MyTest;
-include '../src/Singleton.php';
+include '../vendor/autoload.php';
 include './print_rn.php';
 
 use Zhaiduting\SingletonPattern\Singleton;
