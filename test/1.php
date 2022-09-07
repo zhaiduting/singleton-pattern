@@ -27,7 +27,7 @@ class D extends C
     /**
      * To solve the declaration problem in IDE, each parameter should be set with a default value
      */
-    static function init($arr = '')
+    function init($arr = '')
     {
         print_rn(func_get_args());
     }
