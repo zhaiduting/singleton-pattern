@@ -4,7 +4,7 @@ namespace Zhaiduting\SingletonPattern;
 
 class Registry extends Singleton
 {
-    protected array $values = [];
+    protected $values = [];
 
     function get($key)
     {
