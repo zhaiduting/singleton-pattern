@@ -21,8 +21,8 @@ class FileManage implements ArrayAccess
         $mtime = $this->modified_time();
         if ($this->last_read_time < $mtime) {
             $this->values = unserialize(file_get_contents($this->path));
+            $this->last_read_time = time();
         }
-        $this->last_read_time = time();
     }
 
     private function modified_time()
