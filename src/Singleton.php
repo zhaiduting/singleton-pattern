@@ -6,7 +6,7 @@ class Singleton
 {
     private static array $instance = [];
 
-    function init()
+    function init(): void
     {
     }
 

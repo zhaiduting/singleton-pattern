@@ -6,9 +6,9 @@ use ArrayAccess;
 
 class FileManage implements ArrayAccess
 {
-    private $path;
-    private $last_read_time = 0;
-    private $values = [];
+    private string $path;
+    private int $last_read_time = 0;
+    private array $values = [];
 
     function __construct(string $fileName = __DIR__ . '/../application_registry.txt')
     {

@@ -2,14 +2,13 @@
 
 namespace Zhaiduting\SingletonPattern;
 
-use Zhaiduting\SingletonPattern\FileManage;
+use ArrayAccess;
 
-class ApplicationRegistry extends Registry
+class ApplicationRegistry extends AbstractRegistry
 {
-    protected $values;
-
-    function init(FileManage $fileManage = new FileManage())
+    protected function &createValueBox(FileManage $fileManage = new FileManage()): ArrayAccess|array
     {
-        $this->values = $fileManage;
+        // TODO: Implement createValueBox() method.
+        return $fileManage;
     }
 }

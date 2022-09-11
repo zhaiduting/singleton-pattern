@@ -2,16 +2,16 @@
 
 namespace Zhaiduting\SingletonPattern;
 
-class SessionRegistry extends Registry
-{
-    protected $values;
+use ArrayAccess;
 
-    function init(string $session_key = '')
+class SessionRegistry extends AbstractRegistry
+{
+    protected function &createValueBox(string $session_key = ''): ArrayAccess|array
     {
-        $session_key = __CLASS__ . ' ' . $session_key;
         session_start();
+        $session_key = __CLASS__ . ' ' . $session_key;
         if (!isset($_SESSION[$session_key]))
             $_SESSION[$session_key] = [];
-        $this->values =& $_SESSION[$session_key];
+        return $_SESSION[$session_key];
     }
 }

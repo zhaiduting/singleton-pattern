@@ -2,17 +2,13 @@
 
 namespace Zhaiduting\SingletonPattern;
 
-class Registry extends Singleton
+use ArrayAccess;
+
+class Registry extends AbstractRegistry
 {
-    protected $values = [];
-
-    function get($key)
+    function &createValueBox(): ArrayAccess|array
     {
-        return $this->values[$key] ?? null;
-    }
-
-    function set($key, $val)
-    {
-        $this->values[$key] = $val;
+        $v=[];
+        return $v;
     }
 }
