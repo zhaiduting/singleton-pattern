@@ -10,7 +10,7 @@ abstract class AbstractRegistry extends Singleton
 
     abstract protected function &createValueBox(): ArrayAccess|array;
 
-    function init(): void
+    protected function init(): void
     {
         $this->values = &$this->createValueBox(...func_get_args());
     }
