@@ -6,9 +6,9 @@ use ArrayAccess;
 
 class ApplicationRegistry extends AbstractRegistry
 {
-    protected function &createValueBox(FileManage $fileManage = new FileManage()): ArrayAccess|array
+    protected function &createValueBox(FileRegistration $fileRegistration = new FileRegistration()): ArrayAccess|array
     {
         // TODO: Implement createValueBox() method.
-        return $fileManage;
+        return $fileRegistration;
     }
 }

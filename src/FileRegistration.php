@@ -4,7 +4,7 @@ namespace Zhaiduting\SingletonPattern;
 
 use ArrayAccess;
 
-class FileManage implements ArrayAccess
+class FileRegistration implements ArrayAccess
 {
     private string $path;
     private int $last_read_time = 0;
@@ -39,7 +39,7 @@ class FileManage implements ArrayAccess
 
     private function write()
     {
-        file_put_contents($this->path, serialize($this->values));
+        file_put_contents($this->path, serialize($this->values), LOCK_EX);
     }
 
     public function offsetSet($offset, $value): void
