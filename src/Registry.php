@@ -6,9 +6,9 @@ use ArrayAccess;
 
 class Registry extends AbstractRegistry
 {
-    function &createValueBox(): ArrayAccess|array
+    function &createValueBox(): array
     {
-        $v=[];
+        $v = [];
         return $v;
     }
 }

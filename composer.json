@@ -10,8 +10,9 @@
         }
     ],
     "require": {
-        "php": ">=8.1"
-	},
+        "php": ">=8.1",
+        "ext-shmop": "*"
+    },
     "autoload": {
         "psr-4": {
             "Zhaiduting\\SingletonPattern\\": "src/"

@@ -4,7 +4,7 @@ namespace Zhaiduting\SingletonPattern;
 
 class Singleton
 {
-    private static array $instance = [];
+    private static array $instances = [];
 
     protected function init(): void
     {
@@ -18,10 +18,19 @@ class Singleton
     final static function instance(...$args)
     {
         $k = static::class;
-        if (count($args))
-            $k .= ' ' . serialize($args);
-        if (empty(self::$instance[$k]))
-            self::$instance[$k] = new static(...$args);
-        return self::$instance[$k];
+        return self::inst($k, $args);
+    }
+
+    final static function instances(...$args)
+    {
+        $k = static::class . ' ' . serialize($args);
+        return self::inst($k, $args);
+    }
+
+    private static function inst($k, $args)
+    {
+        if (empty(self::$instances[$k]))
+            self::$instances[$k] = new static(...$args);
+        return self::$instances[$k];
     }
 }

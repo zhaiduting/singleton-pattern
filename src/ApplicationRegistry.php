@@ -3,12 +3,12 @@
 namespace Zhaiduting\SingletonPattern;
 
 use ArrayAccess;
+use Zhaiduting\SingletonPattern\registration\FileRegistration;
 
 class ApplicationRegistry extends AbstractRegistry
 {
-    protected function &createValueBox(FileRegistration $fileRegistration = new FileRegistration()): ArrayAccess|array
+    protected function &createValueBox(FileRegistration $fileRegistration = new FileRegistration()): ArrayAccess
     {
-        // TODO: Implement createValueBox() method.
         return $fileRegistration;
     }
 }
