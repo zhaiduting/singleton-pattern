@@ -8,6 +8,6 @@ function print_rn($msg, $return = false)
     if (isset($_SERVER['HTTP_USER_AGENT']))
         $msg = "<pre>$msg</pre>";
     else
-        $msg .= substr($msg, -1, 1) !== "\n" ? "\n" : '';
+        $msg .= !str_ends_with($msg, "\n") ? "\n" : '';
     return print($msg);
 }
